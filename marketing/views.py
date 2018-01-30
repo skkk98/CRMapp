@@ -7,3 +7,7 @@ class HomePage(TemplateView):
     in the next lesson.
     """
     template_name = 'marketing/home.html'
+
+class LoginPage(TemplateView):
+
+    template_name = 'marketing/login.html'

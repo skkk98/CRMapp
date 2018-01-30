@@ -15,17 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from marketing.views import HomePage
+from marketing.views import HomePage, LoginPage
 from subscribers.views import subscriber_new
-from django.contrib import auth
-from django.contrib.auth import views
-import django
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # Marketing pages
     url(r'^$', HomePage.as_view(), name="home"),
     url(r'^signup/$', subscriber_new, name="sub_new"),
-    url(r'^login/$', django.contrib.auth.views.login, {'template_name': 'marketing/login.html'}),
-    url(r'^logout/$', django.contrib.auth.views.logout, {'next_page': '/login/'}),
+    url(r'^login/$', auth_views.login, {'template_name': 'marketing/login.html'}, name='login'),
+    url(r'^logout/$', auth_views.logout, name='logout'),
+
+
 ]
