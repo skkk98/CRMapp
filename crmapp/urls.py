@@ -24,8 +24,9 @@ urlpatterns = [
     # Marketing pages
     url(r'^$', HomePage.as_view(), name="home"),
     url(r'^signup/$', subscriber_new, name="sub_new"),
-    url(r'^login/$', auth_views.login, {'template_name': 'marketing/login.html'}, name='login'),
-    url(r'^logout/$', auth_views.logout, name='logout'),
+    # url(r'^login/$', auth_views.login, {'template_name': 'marketing/login.html'}, name='login'),
+    # url(r'^logout/$', auth_views.logout, name='logout'),
+    url(r'', include('django.contrib.auth.urls'))
 
 
 ]

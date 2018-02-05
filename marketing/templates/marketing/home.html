@@ -63,5 +63,15 @@
     {# Second Signup Link #}
     <a href="{% url 'sub_new' %}" class=" sgn-btm ">SIGN UP FOR ONLY $15/MONTH</a>
 </div>
+<script>
+// check for Geolocation support
+if (navigator.geolocation) {
+  console.log('Geolocation is supported!');
+}
+else {
+  console.log('Geolocation is not supported for this Browser/OS.');
+}
+</script>
+
 
 {% endblock content %}
